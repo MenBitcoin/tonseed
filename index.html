@@ -5,16 +5,135 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TonSeed – Advertise with Crypto Simplicity</title>
   <meta name="description" content="TonSeed — fast and affordable advertising with TON. Promote your project or banner from just $5 per week.">
+  <meta name="google-site-verification" content="example_google_verification_code">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=pub-1860980619751723" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TONTRACKID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TONTRACKID');
+  </script>
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(96258171, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+    });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/96258171" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:6427942,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f2f2f2;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      padding: 30px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      gap: 40px;
+    }
+    .main {
+      flex: 3;
+    }
+    .sidebar {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .qr-section, .stats-section {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .qr img {
+      width: 100%;
+      max-width: 200px;
+      margin: 10px 0;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #111;
+      color: #aaa;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-  <h1>TonSeed.com – Launch Your Ad with TON</h1>
-  <p><strong>Your ad spot is available. Pricing starts from just $5 per week.</strong></p>
-  <a href="https://t.me/citizenkaz" target="_blank">Contact via Telegram</a>
-  <div class="qr-section">
-    <h3>Pay with TON</h3>
-    <img src="qr-ton.png" alt="TON payment QR" style="max-width:200px;">
-    <p><strong id="ton-wallet">UQAihfSHPlzvWm_TwN-9MGN8Znhg_DB_WPtZgnuXgnnXf_-l</strong></p>
+  <header>
+    <h1>TonSeed.com – Launch Your Ad with TON</h1>
+  </header>
+  <div class="container">
+    <div class="main">
+      <p><strong>Your ad spot is available. Pricing starts from just $5 per week.</strong></p>
+      <a href="https://t.me/citizenkaz" target="_blank">Contact via Telegram</a>
+    </div>
+    <div class="sidebar">
+      <div class="qr-section">
+        <h3>Pay with TON</h3>
+        <div class="qr">
+          <img src="qr-ton.png" alt="TON payment QR">
+          <p><strong id="ton-wallet">UQAihfSHPlzvWm_TwN-9MGN8Znhg_DB_WPtZgnuXgnnXf_-l</strong></p>
+          <button onclick="copyTON()">Copy Wallet Address</button>
+        </div>
+      </div>
+      <div class="stats-section">
+        <h3>Visitor Count</h3>
+        <p>Visits: <span id="visits">0</span></p>
+      </div>
+    </div>
   </div>
+  <footer>
+    &copy; TonSeed <span id="year"></span>. All rights reserved.<br>
+    <a href="/privacy.html" style="color: #aaa;">Privacy Policy</a>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function copyTON() {
+      const wallet = document.getElementById('ton-wallet').textContent;
+      navigator.clipboard.writeText(wallet)
+        .then(() => alert('TON address copied'))
+        .catch(() => alert('Failed to copy'));
+    }
+    let visits = localStorage.getItem('visit-count') || 0;
+    visits++;
+    localStorage.setItem('visit-count', visits);
+    const visitsEl = document.getElementById('visits');
+    if (visitsEl) visitsEl.textContent = visits;
+  </script>
 </body>
 </html>
